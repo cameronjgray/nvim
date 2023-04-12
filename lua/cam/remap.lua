@@ -28,3 +28,7 @@ vim.keymap.set("x", "<leader>p", [["_dP]])
 
 -- replace all occurences
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+
+-- center next
+vim.keymap.set("n", "n", "nzz")
+vim.keymap.set("n", "N", "Nzz")
