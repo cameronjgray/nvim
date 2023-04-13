@@ -39,6 +39,3 @@ vim.keymap.set("n", "<leader>ff", ":! npx prettier -w <C-R>%<CR><CR>")
 -- jest
 vim.keymap.set("n", "<leader>tf", ":! npx jest <C-R>%<CR>")
 vim.keymap.set("n", "<leader>tc", ":! npx jest --coverage --silent --colors<CR>")
-
--- js comment
-vim.keymap.set("n", "<leader>jc", "I// <C-C>")
