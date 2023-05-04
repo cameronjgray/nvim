@@ -21,9 +21,11 @@ return require('packer').startup(function(use)
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
   use('nvim-treesitter/playground')
   use('theprimeagen/harpoon')
+  use('theprimeagen/vim-be-good')
   use('tpope/vim-fugitive')
   use('airblade/vim-gitgutter')
   use('vim-airline/vim-airline')
+  use({'iamcco/markdown-preview.nvim', run = function() vim.fn["mkdp#util#install"]() end, })
 
   use {
 	  'VonHeikemen/lsp-zero.nvim',

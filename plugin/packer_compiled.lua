@@ -175,6 +175,11 @@ _G.packer_plugins = {
     path = "/home/cameron/.local/share/nvim/site/pack/packer/start/vim-airline",
     url = "https://github.com/vim-airline/vim-airline"
   },
+  ["vim-be-good"] = {
+    loaded = true,
+    path = "/home/cameron/.local/share/nvim/site/pack/packer/start/vim-be-good",
+    url = "https://github.com/theprimeagen/vim-be-good"
+  },
   ["vim-fugitive"] = {
     loaded = true,
     path = "/home/cameron/.local/share/nvim/site/pack/packer/start/vim-fugitive",
