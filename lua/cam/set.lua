@@ -18,3 +18,5 @@ vim.opt.incsearch = true
 vim.opt.scrolloff = 8
 
 vim.opt.mouse = ""
+
+vim.opt.splitright = true
