@@ -42,3 +42,9 @@ vim.keymap.set("n", "<leader>tc", ":! npx jest --coverage --silent --colors<CR>"
 
 -- js comment
 vim.keymap.set("n", "<leader>jc", "I// <C-C>")
+
+-- increment
+vim.keymap.set("n", "<leader>i", "<C-a>")
+
+-- decrement
+vim.keymap.set("n", "<leader>d", "<C-x>")
