@@ -48,3 +48,7 @@ vim.keymap.set("n", "<leader>i", "<C-a>")
 
 -- decrement
 vim.keymap.set("n", "<leader>d", "<C-x>")
+
+-- whitespace
+vim.keymap.set("n", "<leader>o", "o<C-C>")
+vim.keymap.set("n", "<leader>O", "O<C-C>")
