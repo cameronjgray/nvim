@@ -13,7 +13,7 @@ return require('packer').startup(function(use)
 	  requires = { {'nvim-lua/plenary.nvim'} }
   }
 
-  use({ 'rose-pine/neovim', as = 'rose-pine', config = function() 
+  use({ 'rose-pine/neovim', as = 'rose-pine', config = function()
 	  vim.cmd('colorscheme rose-pine')
   end
   })
@@ -25,6 +25,7 @@ return require('packer').startup(function(use)
   use('tpope/vim-fugitive')
   use('airblade/vim-gitgutter')
   use('vim-airline/vim-airline')
+  use('ntpeters/vim-better-whitespace')
   use({'iamcco/markdown-preview.nvim', run = function() vim.fn["mkdp#util#install"]() end, })
 
   use {
@@ -49,5 +50,5 @@ return require('packer').startup(function(use)
 		  {'rafamadriz/friendly-snippets'},
 	  }
   }
-end)  
+end)
 
