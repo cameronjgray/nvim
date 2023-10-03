@@ -20,3 +20,11 @@ vim.opt.scrolloff = 8
 vim.opt.mouse = ""
 
 vim.opt.splitright = true
+
+vim.cmd([[
+    function! ReDir(args)
+        execute "vnew | 0read ! " . a:args
+    endfunction
+
+    command! -nargs=* ReDir call ReDir(<q-args>)
+]])
