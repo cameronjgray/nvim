@@ -26,6 +26,7 @@ return require('packer').startup(function(use)
   use('airblade/vim-gitgutter')
   use('vim-airline/vim-airline')
   use('ntpeters/vim-better-whitespace')
+  use('rhysd/conflict-marker.vim')
   use({'iamcco/markdown-preview.nvim', run = function() vim.fn["mkdp#util#install"]() end, })
 
   use {

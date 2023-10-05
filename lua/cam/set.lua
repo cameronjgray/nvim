@@ -28,3 +28,5 @@ vim.cmd([[
 
     command! -nargs=* ReDir call ReDir(<q-args>)
 ]])
+
+vim.cmd('colorscheme rose-pine')
