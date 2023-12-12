@@ -30,3 +30,5 @@ vim.cmd([[
 ]])
 
 vim.cmd('colorscheme rose-pine')
+
+vim.opt.cursorline = true

@@ -52,3 +52,6 @@ vim.keymap.set("n", "<leader>d", "<C-x>")
 -- whitespace
 vim.keymap.set("n", "<leader>o", "o<C-C>")
 vim.keymap.set("n", "<leader>O", "O<C-C>")
+
+--copy path
+vim.keymap.set("n", "<leader>cp", ":let @+ = '<C-R>%' <CR>")
