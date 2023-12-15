@@ -66,6 +66,7 @@ lsp.on_attach(function(client, bufnr)
   vim.keymap.set("n", "<leader>nr", function() vim.lsp.buf.references() end, opts)
   vim.keymap.set("n", "<leader>er", function() vim.lsp.buf.rename() end, opts)
   vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
+  vim.keymap.set("n", "<leader>di", function() vim.diagnostic.open_float() end, opts)
 end)
 
 lsp.setup()

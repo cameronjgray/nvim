@@ -1,13 +1,5 @@
-
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>nt", vim.cmd.Ex)
-
---noremap <Up> <Nop>
---noremap <Down> <Nop>
---noremap <Left> <Nop>
---noremap <Right> <Nop>
---noremap <C-d> <C-d>zz
---noremap <C-u> <C-u>zz
 
 vim.keymap.set("n", "<Up>", "<Nop>")
 vim.keymap.set("n", "<Down>", "<Nop>")
@@ -39,19 +31,24 @@ vim.keymap.set("n", "<leader>ff", ":! npx prettier -w <C-R>%<CR><CR>")
 -- jest
 vim.keymap.set("n", "<leader>tf", ":! npx jest <C-R>%<CR>")
 vim.keymap.set("n", "<leader>tc", ":! npx jest --coverage --silent --colors<CR>")
+vim.keymap.set("n", "<leader>tbf", ":! yarn jest --config=/Users/cam/projects/monorepo/backend/jest.config.dev.js --runInBand --forceExit <C-R>%<CR>")
 
 -- js comment
 vim.keymap.set("n", "<leader>jc", "I// <C-C>")
 
--- increment
+-- increment + decrement
 vim.keymap.set("n", "<leader>i", "<C-a>")
-
--- decrement
-vim.keymap.set("n", "<leader>d", "<C-x>")
+vim.keymap.set("n", "<leader>m", "<C-x>")
 
 -- whitespace
 vim.keymap.set("n", "<leader>o", "o<C-C>")
 vim.keymap.set("n", "<leader>O", "O<C-C>")
 
---copy path
+-- copy path
 vim.keymap.set("n", "<leader>cp", ":let @+ = '<C-R>%' <CR>")
+
+-- put time
+vim.keymap.set("n", "<leader>pt", ":pu=strftime('%H:%M') <CR>")
+
+-- display file
+vim.keymap.set("n", "<leader>df", ":lua DisplayCurrentFile() <CR>")
