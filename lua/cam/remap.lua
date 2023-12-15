@@ -52,3 +52,8 @@ vim.keymap.set("n", "<leader>pt", ":pu=strftime('%H:%M') <CR>")
 
 -- display file
 vim.keymap.set("n", "<leader>df", ":lua DisplayCurrentFile() <CR>")
+
+-- jump to context
+vim.keymap.set("n", "<leader>nc", function()
+  require("treesitter-context").go_to_context()
+end, { silent = true })
