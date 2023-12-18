@@ -1,0 +1,16 @@
+-- Git --
+
+Conflict Marker
+ct - theirs
+co - ours
+cn - none
+cb - both
+[x ]x - next and previous conflict
+
+Fugitive
+* <l>gs  -> git status
+s - stage
+u - undo commit
+cc - commit
+= - see diff
+

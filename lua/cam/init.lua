@@ -1,3 +1,4 @@
 require("cam.remap")
 require("cam.set")
-require("cam.popups")
+require("cam.popups.init")
+

@@ -1,0 +1,8 @@
+-- Navigation --
+
+* <l>nf  -> navigate by file name
+* <l>nw  -> search all files by keyword
+* <l>nr  -> find all by references
+
+* gc  -> jump up to current context
+* gd  -> jump to definition

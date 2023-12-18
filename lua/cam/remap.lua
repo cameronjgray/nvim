@@ -31,7 +31,6 @@ vim.keymap.set("n", "<leader>ff", ":! npx prettier -w <C-R>%<CR><CR>")
 -- jest
 vim.keymap.set("n", "<leader>tf", ":! npx jest <C-R>%<CR>")
 vim.keymap.set("n", "<leader>tc", ":! npx jest --coverage --silent --colors<CR>")
-vim.keymap.set("n", "<leader>tbf", ":! yarn jest --config=/Users/cam/projects/monorepo/backend/jest.config.dev.js --runInBand --forceExit <C-R>%<CR>")
 
 -- js comment
 vim.keymap.set("n", "<leader>jc", "I// <C-C>")
@@ -50,10 +49,11 @@ vim.keymap.set("n", "<leader>cp", ":let @+ = '<C-R>%' <CR>")
 -- put time
 vim.keymap.set("n", "<leader>pt", ":pu=strftime('%H:%M') <CR>")
 
--- display file
+-- modals
 vim.keymap.set("n", "<leader>df", ":lua DisplayCurrentFile() <CR>")
+vim.keymap.set("n", "<leader>dh", ":lua DisplayBindings() <CR>")
 
 -- jump to context
-vim.keymap.set("n", "<leader>nc", function()
+vim.keymap.set("n", "gc", function()
   require("treesitter-context").go_to_context()
 end, { silent = true })

@@ -1,0 +1,4 @@
+-- Formatting --
+
+* <l>ff  -> run prettier on current file
+* <l>jc  -> comment out line (js)

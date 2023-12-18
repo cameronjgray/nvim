@@ -1,0 +1,10 @@
+-- Editing --
+
+* <l>bp  -> better paste
+* <l>s   -> replace all occurences
+* <l>i   -> increment number
+* <l>m   -> decrement number
+
+* <l>ed  -> display diagnostic float
+* <l>ea  -> code actions
+* <l>er  -> rename variable

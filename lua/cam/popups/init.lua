@@ -37,19 +37,7 @@ function CloseMenu()
   vim.api.nvim_win_close(Win_id, true)
 end
 
-function Example()
-  print()
-  local opts = {
-    "option",
-  }
-  local cb = function(_, selection)
-    print("it works" .. selection)
-  end
-  ShowMenu(opts, cb, "Title", 60, 1)
-end
-
 function DisplayCurrentFile()
-  print()
   local opts = {
     vim.api.nvim_buf_get_name(0),
   }
@@ -58,3 +46,30 @@ function DisplayCurrentFile()
   ShowSingleItem(opts, cb, "CurrentFile")
 end
 
+function DisplayBindings()
+  local path  = ENV_PATH .. ".config/nvim/lua/cam/popups/bindings/menu"
+  local cb = function(_, selection)
+    if selection ~= 'EXIT' then
+        selection = selection:gsub("%s+", "")
+        selection = selection:gsub("-", "")
+        local displayPath = ENV_PATH .. ".config/nvim/lua/cam/popups/bindings/" .. selection
+        local displayTitle = selection:gsub("^%l", string.upper)
+        local displayFunc = function(_, s) end
+        DisplayFile(displayPath, displayTitle, displayFunc)
+    else
+    end
+  end
+
+  DisplayFile(path, "Bindings", cb)
+end
+
+function DisplayFile(path, name, cb)
+  local file = io.open(path, "r")
+  local opts = {}
+  if file then
+      for line in file:lines() do
+          table.insert(opts, line)
+      end
+  end
+  ShowMenu(opts, cb, name, 60, 20)
+end
