@@ -54,6 +54,6 @@ vim.keymap.set("n", "<leader>df", ":lua DisplayCurrentFile() <CR>")
 vim.keymap.set("n", "<leader>dh", ":lua DisplayBindings() <CR>")
 
 -- jump to context
-vim.keymap.set("n", "gc", function()
+vim.keymap.set("n", "<leader>gc", function()
   require("treesitter-context").go_to_context()
 end, { silent = true })
