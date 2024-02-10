@@ -32,3 +32,5 @@ vim.cmd([[
 vim.cmd('colorscheme rose-pine')
 
 vim.opt.cursorline = true
+
+vim.cmd('let g:netrw_banner=0')
