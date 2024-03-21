@@ -29,8 +29,21 @@ vim.cmd([[
     command! -nargs=* ReDir call ReDir(<q-args>)
 ]])
 
-vim.cmd('colorscheme rose-pine')
 
 vim.opt.cursorline = true
 
+colorscheme = "pop-punk"
+
 vim.cmd('let g:netrw_banner=0')
+
+vim.cmd('colorscheme ' .. colorscheme)
+
+vim.cmd('command VS colorscheme vscode')
+vim.cmd('command NVS colorscheme ' .. colorscheme)
+
+vim.cmd('command CWT !yarn workspace backend db:dev')
+vim.cmd('command CWD !yarn workspace backend db:test')
+
+vim.cmd('hi CursorLine guibg=#403d52')
+
+vim.g.netrw_bufsettings = 'noma nomod nu rnu nobl nowrap ro'
