@@ -24,6 +24,7 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 -- center next
 vim.keymap.set("n", "n", "nzz")
 vim.keymap.set("n", "N", "Nzz")
+vim.keymap.set("n", "<C-o>", "<C-o>zz")
 
 -- prettier
 vim.keymap.set("n", "<leader>ff", ":! npx prettier -w <C-R>%<CR><CR>")
