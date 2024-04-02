@@ -32,7 +32,7 @@ vim.cmd([[
 
 vim.opt.cursorline = true
 
-colorscheme = "pop-punk"
+colorscheme = "moonfly"
 
 vim.cmd('let g:netrw_banner=0')
 
