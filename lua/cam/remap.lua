@@ -25,6 +25,8 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 vim.keymap.set("n", "n", "nzz")
 vim.keymap.set("n", "N", "Nzz")
 vim.keymap.set("n", "<C-o>", "<C-o>zz")
+vim.keymap.set("n", "*", "*zz")
+vim.keymap.set("n", "#", "#zz")
 
 -- prettier
 vim.keymap.set("n", "<leader>ff", ":! npx prettier -w <C-R>%<CR><CR>")
@@ -58,3 +60,7 @@ vim.keymap.set("n", "<leader>dh", ":lua DisplayBindings() <CR>")
 vim.keymap.set("n", "<leader>gc", function()
   require("treesitter-context").go_to_context()
 end, { silent = true })
+
+-- copy to clipboard
+vim.keymap.set("n", "<leader>y", '"+y')
+vim.keymap.set("v", "<leader>y", '"+y')
