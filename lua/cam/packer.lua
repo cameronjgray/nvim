@@ -10,7 +10,6 @@ return require('packer').startup(function(use)
 
   use({'rose-pine/neovim'})
   use({'bignimbus/pop-punk.vim'})
-  use({'bluz71/vim-moonfly-colors'})
 
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
   use('nvim-treesitter/playground')
@@ -24,7 +23,6 @@ return require('packer').startup(function(use)
   use('vim-airline/vim-airline')
   use('ntpeters/vim-better-whitespace')
   use('rhysd/conflict-marker.vim')
-  use({'iamcco/markdown-preview.nvim', run = function() vim.fn["mkdp#util#install"]() end, })
 
   use {
 	  'VonHeikemen/lsp-zero.nvim',
