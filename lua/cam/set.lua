@@ -20,7 +20,6 @@ vim.opt.scrolloff = 8
 vim.opt.mouse = ""
 
 vim.opt.splitright = true
-vim.opt.splitbelow = true
 
 vim.cmd([[
     function! ReDir(args)
