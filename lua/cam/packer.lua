@@ -11,6 +11,9 @@ return require('packer').startup(function(use)
   use({'rose-pine/neovim'})
   use({'bluz71/vim-moonfly-colors'})
 
+  -- vault specific
+  use('Mofiqul/vscode.nvim')
+
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
   use('nvim-treesitter/nvim-treesitter-context')
   use('theprimeagen/harpoon')
@@ -22,6 +25,11 @@ return require('packer').startup(function(use)
   use('vim-airline/vim-airline')
   use('ntpeters/vim-better-whitespace')
   use('rhysd/conflict-marker.vim')
+
+  -- vault specific
+  use('sbdchd/neoformat')
+  use('github/copilot.vim')
+  use('dstein64/vim-startuptime')
 
   use {
 	  'VonHeikemen/lsp-zero.nvim',
