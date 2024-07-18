@@ -11,7 +11,7 @@ return require('packer').startup(function(use)
   use({'rose-pine/neovim'})
   use({'bluz71/vim-moonfly-colors'})
 
-  -- vault specific
+  -- work specific
   use('Mofiqul/vscode.nvim')
 
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
@@ -26,7 +26,7 @@ return require('packer').startup(function(use)
   use('ntpeters/vim-better-whitespace')
   use('rhysd/conflict-marker.vim')
 
-  -- vault specific
+  -- work specific
   use('sbdchd/neoformat')
   use('github/copilot.vim')
   use('dstein64/vim-startuptime')
