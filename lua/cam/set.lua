@@ -46,3 +46,5 @@ vim.cmd('command CWD !yarn workspace backend db:test')
 vim.cmd("command LogDay put ='==> ' . strftime(\'%Y/%m/%d\') . ' <=='")
 
 vim.g.netrw_bufsettings = 'noma nomod nu rnu nobl nowrap ro'
+
+vim.opt.tildeop = true
