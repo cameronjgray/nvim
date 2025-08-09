@@ -20,7 +20,7 @@ lsp.preset({
 })
 
 lsp.ensure_installed({
-  'eslint',
+  'clangd',
 })
 
 -- Fix Undefined global 'vim'
