@@ -1,0 +1,31 @@
+version: '3'
+services:
+   frontend:
+     build:
+       context: ./frontend/
+       dockerfile: Dockerfile.frontend
+     ports:
+       - ${FRONTEND_PORT}:${FRONTEND_PORT}
+     restart: always
+
+  backend:
+    build:
+      context: ./backend/
+      dockerfile: Dockerfile.backend
+    ports:
+      - ${BACKEND_PORT}:${BACKEND_PORT}
+    volumes:
+      - ./backend/src:/app/src
+    restart: always
+
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_DB: ${DB_NAME}
+    volumes:
+      - ./database/db_setup.sh:/docker-entrypoint-initdb.d/init-user-db.sh
+    ports:
+      - ${DB_PORT}:5432
