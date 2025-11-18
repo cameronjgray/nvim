@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+set -e
+
+psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" <<-EOSQL
+  CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+
+  CREATE TABLE table1 (
+    id uuid PRIMARY KEY DEFAULT uuid_generate_v4 (),
+    username varchar(100) NOT NULL,
+    password varchar(255) NOT NULL,
+    "createdAt" timestamp NOT NULL DEFAULT NOW(),
+    CONSTRAINT unique_id UNIQUE(id),
+  );
+
+  CREATE TABLE table2 (
+    "table1id" uuid references table1(id) NOT NULL,
+  );
+
+EOSQL

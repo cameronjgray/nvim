@@ -1,0 +1,9 @@
+export const api = async () => {
+  try {
+    // code
+  } catch (e: unknown) {
+    const err: Error = e as Error;
+    console.log(err.message);
+    throw err;
+  }
+}

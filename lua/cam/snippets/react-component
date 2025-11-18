@@ -1,0 +1,11 @@
+import "./Component.css";
+
+interface Props {}
+
+export const Component = (props: Props) => {
+  return (
+    <div>
+      <div>New Component</div>
+    </div>
+  )
+}
