@@ -1,3 +1,3 @@
-ENV_PATH = os.getenv('HOME') .. '/'
-
-require('cam')
+require("config.set")
+require("config.lazy")
+require("config.snippets")

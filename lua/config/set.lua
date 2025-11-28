@@ -28,9 +28,6 @@ vim.keymap.set("n", "<C-o>", "<C-o>zz")
 vim.keymap.set("n", "*", "*zz")
 vim.keymap.set("n", "#", "#zz")
 
--- prettier
-vim.keymap.set("n", "<leader>ff", ":! npx prettier -w <C-R>%<CR><CR>")
-
 -- jest
 vim.keymap.set("n", "<leader>tf", ":! npx jest <C-R>%<CR>")
 vim.keymap.set("n", "<leader>tc", ":! npx jest --coverage --silent --colors<CR>")
@@ -56,11 +53,52 @@ vim.keymap.set("n", "<leader>pt", ":pu=strftime('%H:%M') <CR>")
 vim.keymap.set("n", "<leader>df", ":lua DisplayCurrentFile() <CR>")
 vim.keymap.set("n", "<leader>dh", ":lua DisplayBindings() <CR>")
 
--- jump to context
-vim.keymap.set("n", "<leader>gc", function()
-  require("treesitter-context").go_to_context()
-end, { silent = true })
-
 -- copy to clipboard
 vim.keymap.set("n", "<leader>y", '"+y')
 vim.keymap.set("v", "<leader>y", '"+y')
+
+vim.opt.guicursor = ""
+
+vim.opt.nu = true
+vim.opt.relativenumber = true
+
+vim.opt.tabstop = 2
+vim.opt.softtabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.expandtab = true
+
+vim.opt.smartindent = true
+
+vim.opt.wrap = false
+
+vim.opt.hlsearch = false
+vim.opt.incsearch = true
+
+vim.opt.scrolloff = 8
+
+vim.opt.mouse = ""
+
+vim.opt.splitright = true
+
+vim.cmd([[
+    function! ReDir(args)
+        execute "vnew | 0read ! " . a:args
+    endfunction
+
+    command! -nargs=* ReDir call ReDir(<q-args>)
+]])
+
+
+vim.opt.cursorline = true
+
+vim.cmd('let g:netrw_banner=0')
+
+vim.g.netrw_bufsettings = 'noma nomod nu rnu nobl nowrap ro'
+
+vim.opt.tildeop = true
+
+vim.opt.termguicolors = true
+
+vim.diagnostic.config({ virtual_text = true })
+
+vim.opt.pumheight = 15
