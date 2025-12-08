@@ -20,5 +20,6 @@
   "vim-fugitive": { "branch": "master", "commit": "61b51c09b7c9ce04e821f6cf76ea4f6f903e3cf4" },
   "vim-gitgutter": { "branch": "main", "commit": "23f4fa532b1edcca87ec62d060f8ea39b02e363a" },
   "vim-moonfly-colors": { "branch": "master", "commit": "930f33f2e91225afb0491d259cf151ea9eca6ca3" },
-  "vim-surround": { "branch": "master", "commit": "3d188ed2113431cf8dac77be61b842acb64433d9" }
+  "vim-surround": { "branch": "master", "commit": "3d188ed2113431cf8dac77be61b842acb64433d9" },
+  "vscode.nvim": { "branch": "main", "commit": "aa1102a7e15195c9cca22730b09224a7f7745ba8" }
 }

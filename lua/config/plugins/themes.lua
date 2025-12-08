@@ -4,5 +4,8 @@ return {
     config = function()
       vim.cmd.colorscheme "moonfly"
     end
+  },
+  {
+    'Mofiqul/vscode.nvim',
   }
 }
