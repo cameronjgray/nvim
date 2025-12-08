@@ -102,3 +102,5 @@ vim.opt.termguicolors = true
 vim.diagnostic.config({ virtual_text = true })
 
 vim.opt.pumheight = 15
+
+vim.keymap.set("n", "ge", function() vim.diagnostic.open_float() end)
