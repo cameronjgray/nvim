@@ -42,12 +42,6 @@ return {
         on_attach = autocomplete,
       })
 
-      vim.lsp.config('bashls', {
-        cmd = { "bash-language-server", "start" },
-        filetypes = { "bash", "sh" },
-        on_attach = autocomplete,
-      })
-
       local base_on_attach = vim.lsp.config.eslint.on_attach
       vim.lsp.config("eslint", {
         on_attach = function(client, bufnr)
