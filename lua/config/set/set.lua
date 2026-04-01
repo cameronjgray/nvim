@@ -105,3 +105,7 @@ vim.opt.pumheight = 15
 
 vim.keymap.set("t", "<esc><esc>", "<c-\\><c-n>")
 
+vim.g.vim_dadbod_completion_mark_as_keyword = 0
+vim.g.omni_sql_no_default_maps = 1
+
+vim.keymap.set("n", "<leader><C-]>", "<cmd>tab split | lua vim.lsp.buf.definition()<CR>", {})

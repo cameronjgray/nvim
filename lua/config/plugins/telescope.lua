@@ -14,9 +14,15 @@ return
     local conf = require "telescope.config".values
     telescope.setup{
       file_ignore_patterns = { "node_modules", "yarn.lock" },
+      pickers = {
+        find_files = {
+          hidden = true
+        },
+      },
       defaults = {
         file_ignore_patterns = {
-          "node_modules"
+          "node_modules",
+          ".git/",
         }
       },
       extensions = {
