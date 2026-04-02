@@ -4,6 +4,8 @@ return
   dependencies = {
     'nvim-lua/plenary.nvim',
     { 'nvim-telescope/telescope-fzf-native.nvim', build = "make" },
+    'nvim-telescope/telescope-smart-history.nvim',
+    'kkharji/sqlite.lua',
   },
   config = function()
     local telescope = require 'telescope'
@@ -23,13 +25,24 @@ return
         file_ignore_patterns = {
           "node_modules",
           ".git/",
-        }
+        },
+        history = {
+          path = vim.fn.stdpath("data") .. "/telescope_history.sqlite3",
+          limit = 100,
+        },
+        mappings = {
+          i = {
+            ["<C-p>"] = require("telescope.actions").cycle_history_prev,
+            ["<C-n>"] = require("telescope.actions").cycle_history_next,
+          },
+        },
       },
       extensions = {
         fzf = {}
       }
     }
     telescope.load_extension('fzf')
+    telescope.load_extension('smart_history')
 
     local function live_multigrep()
       local opts = {}
