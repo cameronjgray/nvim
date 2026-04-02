@@ -106,3 +106,11 @@ vim.opt.pumheight = 15
 vim.keymap.set("t", "<esc><esc>", "<c-\\><c-n>")
 
 vim.keymap.set("n", "<leader><C-]>", "<cmd>tab split | lua vim.lsp.buf.definition()<CR>", {})
+
+vim.api.nvim_create_autocmd({ "FileType", "BufEnter" }, {
+  pattern = { "markdown", "*.log" },
+  callback = function()
+    vim.opt_local.wrap = true
+    vim.opt_local.linebreak = true
+  end,
+})
