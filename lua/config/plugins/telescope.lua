@@ -34,6 +34,8 @@ return
           i = {
             ["<C-p>"] = require("telescope.actions").cycle_history_prev,
             ["<C-n>"] = require("telescope.actions").cycle_history_next,
+            ["<C-k>"] = require("telescope.actions").move_selection_previous,
+            ["<C-j>"] = require("telescope.actions").move_selection_next,
           },
         },
       },
