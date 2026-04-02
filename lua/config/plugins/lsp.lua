@@ -1,12 +1,3 @@
-local autocomplete = function(client, bufnr)
-  vim.lsp.completion.enable(true, client.id, bufnr, {
-    autotrigger = true,
-    convert = function(item)
-      return { abbr = item.label:gsub('%b()', '') }
-    end,
-  })
-end
-
 return {
   {
     'williamboman/mason.nvim',
@@ -25,7 +16,6 @@ return {
         cmd = {'lua-language-server'},
         filetypes = {'lua'},
         root_markers = {'.luarc.json', '.luarc.jsonc'},
-        on_attach = autocomplete,
         settings = {
           Lua = {
             diagnostics = {
@@ -39,7 +29,6 @@ return {
       vim.lsp.config('ts_ls', {
         cmd = { "typescript-language-server", "--stdio" },
         filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
-        on_attach = autocomplete,
       })
 
       local base_on_attach = vim.lsp.config.eslint.on_attach
