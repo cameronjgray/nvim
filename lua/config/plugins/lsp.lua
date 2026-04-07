@@ -6,7 +6,18 @@ return {
     end
   },
   {
-    'williamboman/mason-lspconfig.nvim'
+    'williamboman/mason-lspconfig.nvim',
+    dependencies = { 'williamboman/mason.nvim' },
+    config = function()
+      require("mason-lspconfig").setup({
+        ensure_installed = {
+          "lua_ls",
+          "ts_ls",
+          "eslint",
+        },
+        automatic_installation = true,
+      })
+    end
   },
   {
     'neovim/nvim-lspconfig',
