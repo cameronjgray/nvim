@@ -1,11 +1,13 @@
-return
-{
+local is_light = os.getenv("NVIM_LIGHT") == "1"
+
+return {
   'nvim-telescope/telescope.nvim',
   dependencies = {
     'nvim-lua/plenary.nvim',
-    { 'nvim-telescope/telescope-fzf-native.nvim', build = "make" },
-    'nvim-telescope/telescope-smart-history.nvim',
-    'kkharji/sqlite.lua',
+    not is_light and { 'nvim-telescope/telescope-fzf-native.nvim', build = "make" } or nil,
+    { 'nvim-telescope/telescope-smart-history.nvim',
+      dependencies = { 'kkharji/sqlite.lua' },
+    },
   },
   config = function()
     local telescope = require 'telescope'
@@ -14,6 +16,12 @@ return
     local finders = require "telescope.finders"
     local make_entry = require "telescope.make_entry"
     local conf = require "telescope.config".values
+
+    local extensions = {}
+    if not is_light then
+      extensions.fzf = {}
+    end
+
     telescope.setup{
       file_ignore_patterns = { "node_modules", "yarn.lock" },
       pickers = {
@@ -39,35 +47,32 @@ return
           },
         },
       },
-      extensions = {
-        fzf = {}
-      }
+      extensions = extensions,
     }
-    telescope.load_extension('fzf')
+
+    if not is_light then
+      telescope.load_extension('fzf')
+    end
     telescope.load_extension('smart_history')
 
     local function live_multigrep()
       local opts = {}
       opts.cwd = vim.uv.cwd()
-
       local finder = finders.new_async_job {
         command_generator = function(prompt)
           if not prompt or prompt == "" then
             return nil
           end
-
           local pieces = vim.split(prompt, "  ")
           local args = { "rg" }
           if pieces[1] then
             table.insert(args, "-e")
             table.insert(args, pieces[1])
           end
-
           if pieces[2] then
             table.insert(args, "-g")
             table.insert(args, pieces[2])
           end
-
           ---@diagnostic disable-next-line: deprecated
           return vim.tbl_flatten {
             args,
@@ -77,7 +82,6 @@ return
         entry_maker = make_entry.gen_from_vimgrep(opts),
         cwd = opts.cwd,
       }
-
       pickers.new(opts, {
         debounce = 100,
         prompt_title = "Multi Grep",

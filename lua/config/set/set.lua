@@ -114,3 +114,15 @@ vim.api.nvim_create_autocmd({ "FileType", "BufEnter" }, {
     vim.opt_local.linebreak = true
   end,
 })
+
+vim.api.nvim_create_autocmd("BufReadPre", {
+  callback = function()
+    local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(0))
+    if ok and stats and stats.size > 100 * 1024 then
+      vim.opt_local.swapfile = false
+      vim.opt_local.undofile = false
+      vim.opt_local.foldmethod = "manual"
+      vim.b.large_file = true
+    end
+  end,
+})

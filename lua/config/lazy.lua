@@ -14,8 +14,22 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+local is_light = os.getenv("NVIM_LIGHT") == "1"
+
 require("lazy").setup({
-  spec = {
-    { import = "config.plugins" }
+  spec = is_light and {
+    { import = "config.plugins.telescope" },
+    { 'nvim-telescope/telescope-smart-history.nvim',
+      dependencies = { 'kkharji/sqlite.lua' },
+    },
+    {
+      'bluz71/vim-moonfly-colors',
+      config = function()
+        vim.cmd.colorscheme "moonfly"
+      end
+    },
+    { 'tpope/vim-sleuth' },
+  } or {
+    { import = "config.plugins" },
   },
 })
