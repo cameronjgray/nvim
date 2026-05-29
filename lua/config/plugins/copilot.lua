@@ -1,13 +1,13 @@
 return {
   {
     'github/copilot.vim',
-    config = function()
-      vim.keymap.set('i', '<C-[>', '<Plug>(copilot-dismiss)');
-      vim.keymap.set('i', '<C-C>',  '<Plug>(copilot-dismiss)<ESC>');
-
-      -- default to disabled
+    cmd = 'Copilot',
+    keys = {
+      { '<C-[>', '<Plug>(copilot-dismiss)', mode = 'i' },
+      { '<C-C>', '<Plug>(copilot-dismiss)<ESC>', mode = 'i' },
+    },
+    init = function()
       vim.g.copilot_enabled = 0
-    end
+    end,
   }
 }
-

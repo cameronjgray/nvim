@@ -44,7 +44,15 @@ vim.keymap.set("n", "<leader>o", "o<C-C>")
 vim.keymap.set("n", "<leader>O", "O<C-C>")
 
 -- copy path
-vim.keymap.set("n", "<leader>cp", ":let @+ = '<C-R>%' <CR>")
+vim.keymap.set("n", "<leader>cp", function ()
+  vim.fn.setreg("+", vim.fn.expand("%"))
+  print("Copied file path.")
+end)
+-- copy filename only
+vim.keymap.set("n", "<leader>cf", function ()
+  vim.fn.setreg("+", vim.fs.basename(vim.fn.expand("%")))
+  print("Copied file name.")
+end)
 
 -- put time
 vim.keymap.set("n", "<leader>pt", ":pu=strftime('%H:%M') <CR>")
@@ -126,3 +134,6 @@ vim.api.nvim_create_autocmd("BufReadPre", {
     end
   end,
 })
+
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
